@@ -1,10 +1,6 @@
-import AdminTermek from "./AdminTermek.js";
+import PublicTermek from "./PublicTermek.js";
 
-/*
-itt kapjuk meg az objListát, és megjelenitjük egy táblázatban,
-Annyiszor példányosítjuk  az AdminTermek Osztályt,ahány eleme lesz a listánknak
-*/
-export default class AdminTermekTablazat {
+export default class PublicTermekTablazat {
   #termekLista = [];
   #szuloElem;
   //#tbodyElem;
@@ -37,10 +33,10 @@ export default class AdminTermekTablazat {
     this.#szuloElem.insertAdjacentHTML("beforeend", html);
     this.tbodyElem = this.#szuloElem.querySelector("table tbody");
     console.log(this.tbodyElem);
-    /*ide példányosítjuk bele a táblázat sorait AdminTermek osztályt */
+    /*ide példányosítjuk bele a táblázat sorait PublicTermek osztályt */
     this.#termekLista.forEach(termek =>{
         console.log(termek)
-        new AdminTermek(termek,this.tbodyElem)
+        new PublicTermek(termek,this.tbodyElem)
     })
   }
 }

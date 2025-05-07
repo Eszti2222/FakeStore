@@ -1,28 +1,30 @@
 export default class Modell {
-  #lista = [];
-  constructor(lista) {
+  //#lista = [];
+  constructor() {
   }
   /*
   az osztály feladata, hogy a HTTP kérésének végrehajtása
   */
   getAdat(vegpont, callback) {
     fetch(vegpont)
-      .then((response) => response.json())
-      .then((TERMEK) => {
-        console.log("Megérkezett adatok");
-        //console.log(TERMEK);
-        callback(TERMEK);
+      .then(response => response.json())
+      .then(data => {
+        data
+        //console.log("Megérkezett adatok");
+        //console.log(data);
+        callback(data);
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
   postAdat(vegpont, callback) {
     fetch(vegpont)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Megérkezett adatok");
-        console.log(TERMEK);
+      .then(response => response.json())
+      .then(data => {
+        data
+        //console.log("Megérkezett adatok");
+        //console.log(data);
         callback(adatok);
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
 }

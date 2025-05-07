@@ -1,8 +1,5 @@
-/*
-1 termék  megjelenítése, a táblázat egy sora
-*/
 
-export default class AdminTermek {
+export default class PublicTermek {
   #adat = {};
   #szuloElem;
   constructor(termek, szuloElem) {
